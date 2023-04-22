@@ -4,6 +4,14 @@
 create .nvmrc file in order keep the node version we use
 ```
 
+## components
+
+Create component from CLI
+```sh
+ng g c components/img
+```
+
+
 
 
 ## 
