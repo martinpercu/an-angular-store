@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'an-angular-store';
+  imgParent = 'https://images.indepth.dev/images/2022/07/ava.jpg';
 }
