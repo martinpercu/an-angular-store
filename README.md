@@ -12,6 +12,13 @@ ng g c components/img
 ```
 
 
+## inputs
+Using @Input in img.component now...
+from the Parent (app.component) we send data to Child (img.component).
+
+The img.component will show a default image when no data receive.
+
+
 
 
 ## 
