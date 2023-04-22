@@ -1,3 +1,18 @@
+## first-step
+
+```sh
+create .nvmrc file in order keep the node version we use
+```
+
+
+
+## 
+
+# All under is automatic angular readme generated.
+
+## 
+
+
 # AnAngularStore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
