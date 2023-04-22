@@ -1,7 +1,15 @@
-# All above is automatic angular readme generated.
+## first-step
+
+```sh
+create .nvmrc file in order keep the node version we use
+```
+
+
 
 ## 
-## 
+
+# All under is automatic angular readme generated.
+
 ## 
 
 
