@@ -37,8 +37,14 @@ onLoaded(img: string) {<br />
   }<br />
 
 
+## products-component 
 
+Create the component from CLI
+```sh
+ng g c components/product
+```
 
+<br /><br />
 
 
 
