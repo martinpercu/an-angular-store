@@ -7,6 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class ImgComponent {
 
-  @Input() img: string = 'valor initial';
+  @Input() img: string = '';
+  imageDefault = "./assets/images/default.png";
+
+  imgError() {
+    this.img = this.imageDefault;
+  }
 
 }

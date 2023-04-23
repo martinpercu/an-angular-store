@@ -20,6 +20,13 @@ The img.component will show a default image when no data receive.
 
 
 
+## output
+Using @In
+
+
+
+
+
 
 ## 
 
