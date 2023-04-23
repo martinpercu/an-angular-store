@@ -44,6 +44,18 @@ Create the component from CLI
 ng g c components/product
 ```
 
+
+## lyfecycle-component 
+
+in img.component all the lyfecycle with console.logs <br />
+- contructor
+- ngOnChanges
+- ngOnInit
+- ngAfterViewInit
+- ngOnDestroy
+
+
+
 <br /><br />
 
 
