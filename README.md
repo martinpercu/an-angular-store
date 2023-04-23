@@ -21,8 +21,21 @@ The img.component will show a default image when error data receive.
 
 
 
-## output
-Using @In
+## output ---> Child to Parent
+on Child html ---> <br />
+(load)="imgLoaded()"  <br />
+
+on Child ts ---> <br />
+@Output + EventEmitter  <br /> <br />
+
+
+on Parent html ----> <br />
+(loaded)="onLoaded($event)"  <br />
+on Parent ts ----><br />
+onLoaded(img: string) {<br />
+    console.log('loaded in PARENT ', img)<br />
+  }<br />
+
 
 
 
