@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'an-angular-store';
   imgParent = 'https://images.indepth.dev/images/2022/07/ava.jpg';
   // imgParent = '';
+
+  onLoaded(img: string) {
+    console.log('loaded in PARENT ', img)
+  }
 }
