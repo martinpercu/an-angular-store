@@ -79,6 +79,17 @@ set changeImg(newImg: string) {
 
 - Is easy to control each input
 
+## Product List
+
+```sh
+ng g c components/products
+```
+
+- Reorganize app-img inside app-product  ===> ORDER
+- Reorganize app-product inside app-products ===> ORDER
+- Add some styles
+- Comment old unnecessary lines 
+
 
 <br /><br />
 
