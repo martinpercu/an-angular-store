@@ -55,6 +55,30 @@ in img.component all the lyfecycle with console.logs <br />
 - ngOnDestroy
 
 
+## ngDestroy 
+- in img (child) on the ngOnInit() something running all time  (window.setInterval + counter)
+- on app(Parent) somenthing to stop img (child) 
+- BUT the event is living even if the component is off
+- IMPORTANT use de ngDestroy ===>
+- in img (child) on the ngOnDestroy() something to stop the first process
+
+
+## SetInput 
+- To control changes from the inputs ngOnChanges(changes: SimpleChanges).
+- We get all changes but not easy to recognize exactly from which inputs exatly comes the "change"
+- BUT ..... using Set Input ---> 
+
+```sh
+img: string = '';
+@Input('img')
+set changeImg(newImg: string) {
+  this.img = newImg
+  console.log('in SET changeImg() | change just this img ==> ' , this.img )
+}
+```
+
+- Is easy to control each input
+
 
 <br /><br />
 
