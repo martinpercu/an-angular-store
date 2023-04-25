@@ -100,6 +100,22 @@ ng g c components/nav
 ```
 - some html in nav header
 
+
+
+## Side Menu
+
+- Side Medu creation in the nav component.
+- Only for mobile view.
+- Using css tanslations actions
+
+
+
+
+## Parent Child
+
+- Using Outputs just send a product to products to cread the shopping cart
+
+
 <br /><br />
 
 
