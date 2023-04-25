@@ -127,6 +127,22 @@ ng g s services/store
 
 
 
+## API services 
+
+```sh
+ng g s services/products
+```
+- This service connect to the API
+- Connect to the api to get all products
+- Reorganice class Product to match the old format
+- Very important in the product service file ===> <br />
+getAllProducts() {<br />
+  return this.http.get<Product[]>('https://fakestoreapi.com/products')<br />
+} to get all from servic<br />
+- with the --get<Product[]>('https...')... we return a list with in our Prorudct class
+
+
+
 <br /><br />
 
 
