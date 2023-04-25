@@ -11,6 +11,9 @@ export class AppComponent {
   title = 'an-angular-store';
   imgParent = 'https://images.indepth.dev/images/2022/07/ava.jpg';
   // imgParent = '';
+  showImg = true;
+
+
   products: Product[] = [
     {
         id: 1,
@@ -70,5 +73,9 @@ export class AppComponent {
 
   onLoaded(img: string) {
     console.log('loaded in PARENT ', img)
+  }
+
+  toggleImage() {
+    this.showImg = !this.showImg
   }
 }
