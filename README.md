@@ -91,7 +91,19 @@ ng g c components/products
 - Comment old unnecessary lines 
 
 
+
+
+## Header List
+
+```sh
+ng g c components/nav
+```
+- some html in nav header
+
 <br /><br />
+
+
+
 
 
 
