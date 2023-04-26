@@ -17,7 +17,8 @@ export class ProductsComponent {
   myShoppingCart: Product[] = [];
 
   products: Product[] = [];
-
+  today = new Date();
+  otherDate = new Date(2022, 11, 18);
 
 
   constructor(

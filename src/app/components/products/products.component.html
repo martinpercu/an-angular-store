@@ -4,6 +4,18 @@
 <p>
   Total ==> $ {{ total }}
 </p>
+<p>
+  Today is ==> {{ today | date }}
+</p>
+<p>
+  The best day was ==> {{ otherDate | date:'longDate' }}
+</p>
+<p>
+  The best day was ==> {{ otherDate | date:'dd / MM / yyyy' }}
+</p>
+<p>
+  {{ 'eL Amor EN lA viDa' | uppercase }}
+</p>
 <div class="products--grid">
   <app-product
     [product]="product"

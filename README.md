@@ -142,6 +142,12 @@ getAllProducts() {<br />
 - with the --get<Product[]>('https...')... we return a list with in our Prorudct class
 
 
+## Pipes in Angular 
+
+- Some data like datesand currency added with pipes
+
+
+
 
 <br /><br />
 
