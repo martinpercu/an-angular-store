@@ -144,7 +144,7 @@ getAllProducts() {<br />
 
 ## Pipes in Angular 
 
-- Some data like datesand currency added with pipes
+- Some data like datesand currency added with pipes.
 
 
 
