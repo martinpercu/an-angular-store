@@ -156,6 +156,16 @@ ng g p pipes/vocalsToNumbers
 
 
 
+## Directives 
+
+- Directives allow us to control the DOM.
+
+```sh
+ng g d directives/highlight
+```
+- Creating an easy highlight directive just to see how it's works
+
+
 
 <br /><br />
 
