@@ -166,6 +166,15 @@ ng g d directives/highlight
 - Creating an easy highlight directive just to see how it's works
 
 
+## State-Management (reactivity) (subscribe)
+
+- State-Management in service store.service create an observable to be subcribed for any component.
+- in component nav subscribe to "store.service" to listen Product[] state.
+- Using Product[] get the number of item to change counter to show counter in the html.
+- When APPs becomes more complexe using subscription is a better way to comunicate between component far away one to each other. (otherwise @Output #Input make the job)
+
+
+
 
 <br /><br />
 
