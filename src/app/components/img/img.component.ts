@@ -8,8 +8,9 @@ import { Component, Input, Output, EventEmitter, SimpleChange } from '@angular/c
 })
 export class ImgComponent {
 
-  img: string = '';
+  img = '';
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('img')
   set changeImg(newImg: string) {
     this.img = newImg
