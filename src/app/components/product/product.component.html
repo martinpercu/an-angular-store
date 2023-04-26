@@ -1,5 +1,6 @@
 <!-- <img width="190px" [src]="product.image" alt=""> -->
 <app-img [img]="product.image"></app-img>
 <h3>{{ product.price | currency:"EUR"}}</h3>
-<p>{{ product.title }}</p>
+<p>{{ product.title | reverse }}</p>
+<p>{{ product.title | vocalsToNumbers }}</p>
 <button (click)="onAddToCart()">Add to cart</button>

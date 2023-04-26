@@ -142,9 +142,17 @@ getAllProducts() {<br />
 - with the --get<Product[]>('https...')... we return a list with in our Prorudct class
 
 
-## Pipes in Angular 
+## Pipes 
 
 - Some data like datesand currency added with pipes.
+
+```sh
+ng g p pipes/reverse
+npm i date-fns
+ng g p pipes/timeAgo
+ng g p pipes/vocalsToNumbers
+```
+- Creating personal pipes just for fun
 
 
 
