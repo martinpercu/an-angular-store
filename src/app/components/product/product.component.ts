@@ -10,7 +10,7 @@ import { Product } from '../../models/product.model';
 export class ProductComponent {
 
   @Input() product: Product = {
-    id: 0,
+    id: '',
     title: '',
     price: 0,
     description: '',
@@ -22,9 +22,14 @@ export class ProductComponent {
     images: [],
   };
   @Output() addedProduct = new EventEmitter<Product>();
+  @Output() showProductDetail = new EventEmitter<string>();
 
   onAddToCart() {
     this.addedProduct.emit(this.product)
+  }
+
+  onShowDetail() {
+    this.showProductDetail.emit(this.product.id)
   }
 
 }
