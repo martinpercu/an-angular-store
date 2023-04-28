@@ -185,6 +185,42 @@ ng add @angular-eslint/schematics
 - You could intall the ESLint in your IDE. Is possible to disable some line in order to let know the linter you know about this. (check the img.component.ts file in line 14)
 
 
+## 
+##
+
+# APIs REST 
+
+The next branches will be focus in APIs REST. Is very useful to intall.
+- An API client like Insomnia our Postman
+- A JSON viewer in your browser
+
+##
+##
+
+
+## Get Request
+
+In app.modules.ts :<br />
+import { HttpClientModule} from '@angular/common/http'<br />
++<br />
+imports: [HttpClientModule ],<br /><br />
+
+In products.service.ts<br />
+import { HttpClient} from '@angular/common/http'<br />
++<br />
+constructor(private http: HttpClient) { }<br /><br />
+
+- New api to consume (https://young-sands-07814.herokuapp.com/api/products)
+- Change in services and imports etc
+- Updates in html
+
+
+
+
+
+
+
+
 
 <br /><br />
 
