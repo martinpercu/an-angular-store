@@ -6,9 +6,13 @@
     <a href="">
       <img src="./assets/images/nav/logo-sale.png" alt="logo">
     </a>
-    <a href="">
+    <span class="cartMobile">
+      <a href="">
       <img src="./assets/images/nav/shopping-cart.png" alt="logo">
     </a>
+    <span class="counter">{{ counter }}</span>
+  </span>
+
   </div>
 <div class="side-menu" [class.active]="activeMenu">
   <button (click)="toggleMenu()">Close</button>
