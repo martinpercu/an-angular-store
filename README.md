@@ -224,6 +224,20 @@ constructor(private http: HttpClient) { }<br /><br />
 
 
 
+## Slides implementation
+
+- Intall swiper 
+```sh
+npm i swiper@8
+```
+
+- Import the swiperModule .---> app.modules.ts
+- In styles.scss add ==> @import 'swiper/scss';
+
+
+
+
+
 
 
 

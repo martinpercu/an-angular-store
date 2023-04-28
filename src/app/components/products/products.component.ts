@@ -22,6 +22,18 @@ export class ProductsComponent implements OnInit{
   total = 0;
   products: Product[] = [];
   showProductDetail = false;
+  productChosen: Product = {
+    id: '',
+    title: '',
+    price: 0,
+    description: '',
+    category: {
+      id: 0,
+      name: '',
+      typeImg: '',
+    },
+    images: [],
+  };
 
 
 
@@ -56,7 +68,9 @@ export class ProductsComponent implements OnInit{
   getProductDetail(id: string) {
     console.log(id)
     this.productsService.getProducts(id).subscribe(data => {
-      console.log('product ==> ', data)
+      this.toggleProductDetail();
+      console.log('product ==> ', data);
+      this.productChosen = data;
     })
   }
 
