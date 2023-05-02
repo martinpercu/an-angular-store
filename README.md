@@ -236,6 +236,11 @@ npm i swiper@8
 
 
 
+## Post Request
+
+- In product model creation DTO (data transfer object)
+- Use this DTO in products.service 
+
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from '../../models/product.model'
+import { Product, CreateProductDTO } from '../../models/product.model'
 
 import { StoreService } from '../../services/store.service'
 import { ProductsService } from '../../services/products.service'
@@ -71,6 +71,21 @@ export class ProductsComponent implements OnInit{
       this.toggleProductDetail();
       console.log('product ==> ', data);
       this.productChosen = data;
+    })
+  }
+
+  createNewPropduct() {
+    const product: CreateProductDTO = {
+      title: 'Nuevo Prod',
+      description: 'super classe produit pour tout le monde vraiment la nickel chrome qsdfkhqsdkf sdfdsf sdf s sdf hqsd',
+      images: ['https://picsum.photos/300/200', 'https://picsum.photos/350/160', 'https://picsum.photos/200/300'],
+      price: 34,
+      categoryId: 1,
+    }
+    this.productsService.create(product)
+    .subscribe(data => {
+      console.log('Created ==> ', data);
+      this.products.unshift(data)
     })
   }
 
