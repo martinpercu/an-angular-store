@@ -174,6 +174,16 @@ ng g d directives/highlight
 - When APPs becomes more complexe using subscription is a better way to comunicate between component far away one to each other. (otherwise @Output #Input make the job)
 
 
+## Linters (guide styles helper)
+
+```sh
+ng lint
+(probably invite to intall with next command)
+ng add @angular-eslint/schematics
+```
+- When run ng lint ===> we get the error and warning the proyect. The idea y just to fix them. ;)
+- You could intall the ESLint in your IDE. Is possible to disable some line in order to let know the linter you know about this. (check the img.component.ts file in line 14)
+
 
 
 <br /><br />

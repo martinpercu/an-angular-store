@@ -15,9 +15,6 @@ export class StoreService {
   myCart$ = this.myCart.asObservable();
 
 
-  constructor() { }
-
-
   addToShoppingCart(product: Product) {
     // console.log(product)
     this.myShoppingCart.push(product)
