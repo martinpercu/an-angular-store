@@ -116,6 +116,17 @@ ng g c components/nav
 - Using Outputs just send a product to products to cread the shopping cart
 
 
+
+## Services 
+
+```sh
+ng g s services/store
+```
+- That's create just 2 files in proyect
+- Use the service to manage the store cart functions
+
+
+
 <br /><br />
 
 
