@@ -216,6 +216,26 @@ constructor(private http: HttpClient) { }<br /><br />
 
 
 
+## Product Detail
+
+- Get with product ID just the product from the API
+- With this product add it in the new slide
+
+
+
+
+## Slides implementation
+
+- Intall swiper 
+```sh
+npm i swiper@8
+```
+
+- Import the swiperModule .---> app.modules.ts
+- In styles.scss add ==> @import 'swiper/scss';
+
+
+
 
 
 

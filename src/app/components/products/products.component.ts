@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../../models/product.model'
 
@@ -11,14 +11,31 @@ import { ProductsService } from '../../services/products.service'
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit{
 
-  total = 0;
-  myShoppingCart: Product[] = [];
-
-  products: Product[] = [];
+  // this vars under just for try pipes
   today = new Date();
   otherDate = new Date(2022, 11, 18);
+  // this vars above just for try pipes
+
+  myShoppingCart: Product[] = [];
+  total = 0;
+  products: Product[] = [];
+  showProductDetail = false;
+  productChosen: Product = {
+    id: '',
+    title: '',
+    price: 0,
+    description: '',
+    category: {
+      id: 0,
+      name: '',
+      typeImg: '',
+    },
+    images: [],
+  };
+
+
 
 
 
@@ -42,6 +59,19 @@ export class ProductsComponent {
     console.log(this.myShoppingCart)
     this.total = this.storeService.getTotal()
     console.log(this.total)
+  }
+
+  toggleProductDetail() {
+    this.showProductDetail = !this.showProductDetail;
+  }
+
+  getProductDetail(id: string) {
+    console.log(id)
+    this.productsService.getProducts(id).subscribe(data => {
+      this.toggleProductDetail();
+      console.log('product ==> ', data);
+      this.productChosen = data;
+    })
   }
 
 }
