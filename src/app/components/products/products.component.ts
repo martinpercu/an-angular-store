@@ -35,6 +35,9 @@ export class ProductsComponent implements OnInit{
     images: [],
   };
 
+  limit = 10;
+  offset = 0;
+
 
 
 
@@ -45,6 +48,24 @@ export class ProductsComponent implements OnInit{
   ) {
     this.myShoppingCart = this.storeService.getShoppingCart();
   }
+
+  // ngOnInit(): void {
+  //   this.productsService.getAllProducts().subscribe(data => {
+  //     this.products = data;
+  //     console.log(data)
+  //   })
+  // }
+
+  // ngOnInit(): void {
+  //   console.log('start offset ngOnInit ==> ', this.offset);
+  //   this.productsService.getProductsByPage(10, 0)
+  //   .subscribe(data => {
+  //     this.products = data;
+  //     console.log(data);
+  //     this.offset += 10
+  //     console.log('END offset ngOnInit ==> ', this.offset);
+  //   })
+  // }
 
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe(data => {
@@ -111,6 +132,31 @@ export class ProductsComponent implements OnInit{
       const productIndex = this.products.findIndex(item => item.id === this.productChosen.id);
       this.products.splice(productIndex, 1);
       this.showProductDetail = false;
+    })
+  }
+
+  // loadMoreProducts() {
+  //   console.log('Start offset loadMoreProducts ==> ', this.offset);
+  //   this.productsService.getProductsByPage(this.limit, this.offset)
+  //   .subscribe(data => {
+  //     this.products = this.products.concat(data);
+  //     console.log(data);
+  //     this.offset += 10;
+  //     console.log('END offset loadMoreProducts ==> ', this.offset);
+  //   })
+  // }
+
+  // Above works fine with getProductsByPage()
+  // Under works directly with same function getAllProducts() ... this function has limit and offset OPTIONALS
+
+  loadMoreProducts() {
+    console.log('Start offset loadMoreProducts ==> ', this.offset);
+    this.productsService.getAllProducts(this.limit, this.offset)
+    .subscribe(data => {
+      this.products = this.products.concat(data);
+      console.log(data);
+      this.offset += 10;
+      console.log('END offset loadMoreProducts ==> ', this.offset);
     })
   }
 

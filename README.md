@@ -256,6 +256,12 @@ All above is just the "standard" way to use put and patch. In this angular proje
 - Attention the backend could return a boolean and don't return the older/deleted object.
 
 
+## Url Parameters and Pagination
+
+- getProductsByPage(limit: number, offset: number)
+- see the new functino  getAllProducts()  ---> thats is used as getProductsByPage but the limit and offset are optional
+
+
 
 <br /><br />
 
