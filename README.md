@@ -243,6 +243,11 @@ npm i swiper@8
 
 
 
+## Put & Patch Request
+
+- Put normally we send ALL values of the object (DTO)
+- Patch normally we send just one or some values of the object (DTO)
+All above is just the "standard" way to use put and patch. In this angular project I will use put to update some values. (exactly the reverse above). Everything depends on backend rules.
 
 
 
