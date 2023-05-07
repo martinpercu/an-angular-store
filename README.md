@@ -250,6 +250,11 @@ npm i swiper@8
 All above is just the "standard" way to use put and patch. In this angular project I will use put to update some values. (exactly the reverse above). Everything depends on backend rules.
 
 
+## Delete Request
+
+- Delete is easy. Just the ID of element to delete. 
+- Attention the backend could return a boolean and don't return the older/deleted object.
+
 
 
 <br /><br />
