@@ -271,6 +271,14 @@ All above is just the "standard" way to use put and patch. In this angular proje
 
 
 
+## Retry a request
+
+- in getAllProducts() we use the pipe and retry.
+- return this.http.get<Product[]>(this.apiUrl, { params })<br>
+    .pipe(<br>
+      retry(4)<br> 
+    ); is easy only one value.<br>
+
 
 <br /><br />
 
