@@ -263,6 +263,15 @@ All above is just the "standard" way to use put and patch. In this angular proje
 
 
 
+## Observable vs Promisen
+
+- Promise is easy only one value.
+- Observable a constant infomartion
+- Importa using the HttpClient when we get a response from observable HttpClient will kill the process. (Otherwise an Observable will stay alive for ever OR when we programatelly will stop this process)
+
+
+
+
 <br /><br />
 
 
