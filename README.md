@@ -280,6 +280,20 @@ All above is just the "standard" way to use put and patch. In this angular proje
     ); is easy only one value.<br>
 
 
+## CORS issues
+
+- Most of APIs will work if request are from the same domain.
+- We could use in development a proxy. (../proxy.config.json)
+- Now if we want to use the proxy run..
+```sh
+npm run start:proxy
+```
+OR
+```sh
+ng serve --proxy-config ./proxy.config.json
+```
+
+
 <br /><br />
 
 

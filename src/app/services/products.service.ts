@@ -10,10 +10,20 @@ import { Product, CreateProductDTO, UpdateProductDTO } from './../models/product
 })
 export class ProductsService {
 
+  // this URL is OK if we use the PROXY ==> use it running:
+  // ng serve --proxy-config ./proxy.config.json
+  // OR
+  // npm run start:proxy
+  private apiUrl = '/api/products';
+
+
+  // this URL is OK but now we are using the proxy
+  // ng serve
   // private apiUrl = 'https://young-sands-07814.herokuapp.com/api/products';
 
+
   // the next URL is WRONG ==>  just to try "retry and pipes"
-  private apiUrl = 'https://young-sands-07814.herokusdfapp.com/api/products';
+  // private apiUrl = 'https://young-sands-07814.herokusdfapp.com/api/products';
 
   constructor(
     private http: HttpClient
