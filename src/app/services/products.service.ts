@@ -12,7 +12,7 @@ export class ProductsService {
 
   // private apiUrl = 'https://young-sands-07814.herokuapp.com/api/products';
 
-  // above wrong URL just to try "retry and pipes"
+  // the next URL is WRONG ==>  just to try "retry and pipes"
   private apiUrl = 'https://young-sands-07814.herokusdfapp.com/api/products';
 
   constructor(
@@ -34,6 +34,7 @@ export class ProductsService {
       retry(4)
     );
   }
+
 
   getProducts(id: string) {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
