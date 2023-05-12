@@ -314,6 +314,11 @@ This is the reason the files in environments are:<br>
 
 
 
+## Error Manage
+
+- The backend return error if product not exist (sending ID wrong)
+- Implementation how to manage this errors
+
 
 
 

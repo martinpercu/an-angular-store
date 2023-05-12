@@ -38,6 +38,8 @@ export class ProductsComponent implements OnInit{
   limit = 10;
   offset = 0;
 
+  statusDetail: 'loading' | 'succes' | 'error' | 'init' = 'init'
+
 
 
 
@@ -88,14 +90,24 @@ export class ProductsComponent implements OnInit{
 
   getProductDetail(id: string) {
     console.log(id)
-    this.productsService.getProducts(id).subscribe(data => {
-      this.toggleProductDetail();
+    this.statusDetail = 'init';
+    this.toggleProductDetail();
+    this.productsService.getProducts(id)
+    .subscribe(data => {
       console.log('product ==> ', data);
+      this.statusDetail = 'succes';
       this.productChosen = data;
+    }, errorMsg => {
+      console.log(errorMsg);
+      // console.log(response.error.message); // just the message from Backend
+      // if we catch the error in the products.service response.error.message fails
+      // "cannot read properties of undefined (reading 'message')"
+      this.statusDetail = 'error';
+      window.alert(errorMsg)
     })
   }
 
-  createNewPropduct() {
+  createNewProduct() {
     const product: CreateProductDTO = {
       title: 'Nuevo Prod',
       description: 'super classe produit pour tout le monde vraiment la nickel chrome qsdfkhqsdkf sdfdsf sdf s sdf hqsd',

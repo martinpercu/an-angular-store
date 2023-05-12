@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { retry } from 'rxjs/operators';
+import { HttpClient, HttpParams, HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
+import { retry, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 import { Product, CreateProductDTO, UpdateProductDTO } from './../models/product.model'
 
@@ -11,9 +12,9 @@ import { environment } from './../../environments/environment';
 })
 export class ProductsService {
 
-  // this URL with ${environments} is OK
-  // Allow to use development and prod URLs
-  private apiUrl = `${environment.API_URL}/api/products`;
+  // // this URL with ${environments} is OK
+  // // Allow to use development and prod URLs
+  // private apiUrl = `${environment.API_URL}/api/products`;
 
 
   // this URL is OK if we use the PROXY ==> use it running:
@@ -25,7 +26,7 @@ export class ProductsService {
 
   // this URL is OK but now we are using the proxy
   // ng serve
-  // private apiUrl = 'https://young-sands-07814.herokuapp.com/api/products';
+  private apiUrl = 'https://young-sands-07814.herokuapp.com/api/products';
 
 
   // the next URL is WRONG ==>  just to try "retry and pipes"
@@ -51,9 +52,31 @@ export class ProductsService {
     );
   }
 
+  // this is getProducts without "manage errors"
+  // getProducts(id: string) {
+  //   return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  // }
+
 
   getProducts(id: string) {
-    return this.http.get<Product>(`${this.apiUrl}/${id}`);
+    return this.http.get<Product>(`${this.apiUrl}/${id}`)
+    .pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 500) {
+          return throwError(() => ('Hey is a server error 500'))
+        }
+        if (error.status === 404) {
+          return throwError(() => ('The product not exist'))
+        }
+        if (error.status === HttpStatusCode.Unauthorized) { // Just to use HttsStatusCode
+          return throwError(() => ('You are not authorized is error 401 '))
+        }
+        if (error.status === HttpStatusCode.Conflict) { // Just to use HttsStatusCode
+          return throwError(() => ('This is error 409 '))
+        }
+        return throwError(() => ('This is a default error'))
+      })
+    )
   }
 
 
