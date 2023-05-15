@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { retry, catchError, map } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { throwError, zip } from 'rxjs';
 
 import { Product, CreateProductDTO, UpdateProductDTO } from './../models/product.model'
 
@@ -58,10 +58,26 @@ export class ProductsService {
     );
   }
 
+
+
+  fetchReadAndUpdate(id: string, dto: UpdateProductDTO) {
+    return zip(
+      this.getProducts(id),
+      this.update(id, dto)
+    )
+  }
+
+
+
+
+
   // this is getProducts without "manage errors"
   // getProducts(id: string) {
   //   return this.http.get<Product>(`${this.apiUrl}/${id}`);
   // }
+
+
+
 
 
   getProducts(id: string) {
