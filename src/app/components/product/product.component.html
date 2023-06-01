@@ -5,6 +5,9 @@
 <p>{{ product.title | reverse }}</p>
 <p>{{ product.title | vocalsToNumbers }}</p>
 -->
+<p>{{ product?.taxes | currency:"EUR"}}</p>
+<p *ngIf="product.taxes">{{ product.taxes | currency:"EUR"}}</p>
+<!-- The above 2 possibilities are OK.  I prefer the last one with *ngIf-->
 <p appHighlight>{{ product.description }}</p>
 <button (click)="onShowDetail()">See Detail</button>
 <button (click)="onAddToCart()">Add to cart</button>

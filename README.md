@@ -314,7 +314,19 @@ This is the reason the files in environments are:<br>
 
 
 
+## Error Manage
 
+- The backend return error if product not exist (sending ID wrong)
+- Implementation how to manage this errors
+
+
+
+
+## Request Transform
+
+- The backend return something and we will tranform it to show in different in front
+- The class Product will have another key "taxes"
+- The taxes will be manipulated in the products.service  Then we use it in the producto.component
 
 
 

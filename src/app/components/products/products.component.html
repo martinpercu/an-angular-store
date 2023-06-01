@@ -7,7 +7,10 @@
 <p>  {{ 'eL Amosr EN lA viDa' | uppercase }}</p>
 -->
 
-<button (click)="createNewPropduct()">CREATE product</button>
+<button (click)="createNewProduct()">CREATE product</button>
+
+<button (click)="getProductDetail('15151')">Detail false ID</button>
+<!-- <div>The status is ==>  {{ statusDetail }} </div> -->
 
 <div class="products--grid">
   <app-product
@@ -18,7 +21,9 @@
   ></app-product>
   <button (click)="loadMoreProducts()"> Afficher plus </button>
 </div>
+
 <div class="product-detail" [class.active]="showProductDetail">
+  <div>The status is ==>  {{ statusDetail }} </div>
   <div *ngIf="productChosen">
     <button (click)="toggleProductDetail()">Close</button>
     <h1> {{ productChosen.title }}</h1>
