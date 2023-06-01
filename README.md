@@ -280,6 +280,46 @@ All above is just the "standard" way to use put and patch. In this angular proje
     ); is easy only one value.<br>
 
 
+## CORS issues
+
+- Most of APIs will work if request are from the same domain.
+- We could use in development a proxy. (../proxy.config.json)
+- Now if we want to use the proxy run..
+```sh
+npm run start:proxy
+```
+OR
+```sh
+ng serve --proxy-config ./proxy.config.json
+```
+
+
+## Environments
+
+- Angular 15 don't create by default the envirements folder. SO...
+```sh
+ng generate environments
+```
+- This command create the folder and upgrade the angular.json
+
+Important ==> the proxy only will works in development ! ! !<br>
+So I fixed that using the Environments<br><br>
+
+Important 2 ===> Since angular 15 the default environment is prod. In older angular version was development. <br>
+This is the reason the files in environments are:<br>
+- environment.development.ts 
+- environment.ts (this one is the prod mode)
+- (older angular version works in the opposite direction environment.production.ts and environment.ts this last was the development one.)
+
+
+
+
+
+
+
+
+
+
 <br /><br />
 
 
