@@ -330,6 +330,17 @@ This is the reason the files in environments are:<br>
 
 
 
+## Avoiding callback hell
+
+- Using switchMap from 'rxjs/operators' ==> Allows doSomething() .then doSomething2() .then doSomething3() .then doSomething4() .then doSomething5()
+- switchMap allow concatenations
+# 
+- Using zip from 'rxjs' ==> Allows doSometing()+doSometing2()+doSometing3()+doSometing4() all at same time.
+- Important this branch is just to write an example how to solve the callback hell problem using angular.
+
+
+
+
 
 
 <br /><br />
