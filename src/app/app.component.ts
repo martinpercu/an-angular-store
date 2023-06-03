@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AuthService } from './services/auth.service';
+// import { AuthService } from './services/auth.service';
 import { UsersService } from './services/users.service';
 
 
@@ -15,9 +15,10 @@ export class AppComponent {
   imgParent = 'https://images.indepth.dev/images/2022/07/ava.jpg';
   // imgParent = '';
   showImg = true;
+  token = '';
 
   constructor(
-    private authService: AuthService,
+    // private authService: AuthService,
     private usersService: UsersService,
 
     ) {
@@ -44,11 +45,19 @@ export class AppComponent {
     });
   }
 
-  login() {
-    this.authService.login('martin@supermail.com', '19801980')
-    .subscribe(rta => {
-      console.log(rta); // the rta is the row answer for the token
-      console.log(rta.access_token); // ass the answer is typed with Auth in the service rta.access_token IS the token itself
-    });
-  }
+  // login() {
+  //   this.authService.login('martin@supermail.com', '19801980')
+  //   .subscribe(rta => {
+  //     console.log(rta); // the rta is the row answer for the token
+  //     console.log(rta.access_token); // ass the answer is typed with Auth in the service rta.access_token IS the token itself
+  //     this.token = rta.access_token;
+  //   });
+  // }
+
+  // getProfile() {
+  //   this.authService.profile(this.token)
+  //   .subscribe(profile => {
+  //     console.log(profile);
+  //   });
+  // }
 }

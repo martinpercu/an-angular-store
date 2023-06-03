@@ -359,6 +359,19 @@ ng g s services/token
 
 
 
+## Manage Headers 
+
+- Move from app.component the previous logic to the nav component.
+- In nav component the login button we get the token. 
+- Then the Get Profile button will use the token to receive the profile. (that's will show the user email)
+- Normally this logic is all together in one step. Something like loginAndGetProfile(). BUT I left separate in ordert to have a clear fonctionallity further apps.
+- In the app component the "create user button" will create an user in DB. To config this go to createUser().
+
+
+
+
+
+
 <br /><br />
 
 
