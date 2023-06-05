@@ -370,6 +370,27 @@ ng g s services/token
 
 
 
+## Interceptor 
+
+- Create interceptor .
+```sh
+ng g interceptor interceptors/time --flat
+```
+- the "--flat" is to create directly the file without a folder ==> (time.interceptor.ts)
+- in time.interceptor.ts we will get the time that use the request
+- in app.module.ts we inject the time.interceptor ===> <br>
+import HTTP_INTERCEPTORS  <br>
+import TimeInterceptor <br>
+providers: [<br>
+    { provide: HTTP_INTERCEPTORS, useClass: TimeInterceptor, multi: true }<br>
+  ],<br>
+- With that we get the time for each request.
+
+
+
+
+
+
 
 
 <br /><br />
