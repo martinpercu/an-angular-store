@@ -16,7 +16,7 @@ export class NavComponent {
 
   activeMenu = false;
   counter = 0;
-  token = '';
+  // token = '';
   profile: User | null = null;
 
   constructor(
@@ -35,20 +35,25 @@ export class NavComponent {
   }
 
   login() {
-    this.authService.login('martin@supermail.com', '19801980')
-    .subscribe(rta => {
-      console.log(rta); // the rta is the row answer for the token
-      console.log(rta.access_token); // ass the answer is typed with Auth in the service rta.access_token IS the token itself
-      this.token = rta.access_token;
-    });
+    this.authService.loginAndGet('martin@supermail.com', '19801980')
+    .subscribe(user => {
+      this.profile = user;
+      // this.token = '-invented-to-work-in-html-';
+    })
+    // .subscribe(rta => {
+    //   console.log(rta); // the rta is the row answer for the token
+    //   console.log(rta.access_token); // ass the answer is typed with Auth in the service rta.access_token IS the token itself
+    //   this.token = rta.access_token;
+    // })
+    ;
   }
 
-  getProfile() {
-    this.authService.profile(this.token)
-    .subscribe(user => {
-      console.log(user);
-      this.profile = user;
-    });
-  }
+  // getProfile() {
+  //   this.authService.profile()
+  //   .subscribe(user => {
+  //     console.log(user);
+  //     this.profile = user;
+  //   });
+  // }
 
 }
