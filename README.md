@@ -407,6 +407,19 @@ ng g interceptor interceptors/token --flat
 Nox in nav there is no var "token" so in html to show or not the login button the var is profile. 
 
 
+## Context Interceptor 
+
+- In time.service import HttpContext and HttpContextToken 
+- Add : <br>
+const CHECK_TIME = new HttpContextToken<boolean>(() => false);<br>
+<br>
+export function checkTime() { <br>
+  return new HttpContext().set(CHECK_TIME, true)<br>
+}<br>
+- Then the intercept use an IF to know if request.context is in true or false
+- Just adding in params the "context: checkTime()" in any request and thats is.
+- The interceptor will be 'activated' for this request.
+- IMPORTANT! in the logic we could start HttpContextToken in true and will intercept all request. So the logic in this case is just te reverse.
 
 
 
