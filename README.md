@@ -424,6 +424,20 @@ export function checkTime() { <br>
 
 
 
+## File Download
+
+- In app.component little logic.. just a link to download somthing in local.
+- Now the download programatecly:
+```sh
+ng g s services/files
+npm i file-saver
+npm install @types/file-saver --save-dev
+```
+- Important!! the @type must be installed for develop ==> --save-dev
+- The button download in app will download a pdf file from the web.
+
+
+
 
 
 <br /><br />
