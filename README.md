@@ -437,6 +437,14 @@ npm install @types/file-saver --save-dev
 - The button download in app will download a pdf file from the web.
 
 
+## File Upload
+
+- In file.service the method uploadFile().  
+- Important! new FormData()  ===> FormData is the html native object.
+- Important! usually we must to send also a "headers" ===> just look the comment lines in the files.service in the uploadFile(). (the backend we use no need the headers)
+- The interface File in the files.service is the how the API response.
+
+
 
 
 

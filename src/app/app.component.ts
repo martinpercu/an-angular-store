@@ -6,6 +6,7 @@ import { FilesService } from './services/files.service';
 
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,11 +18,12 @@ export class AppComponent {
   // imgParent = '';
   showImg = true;
   token = '';
+  imageRta = '';
 
   constructor(
     // private authService: AuthService,
     private usersService: UsersService,
-    private fileService: FilesService
+    private filesService: FilesService
 
     ) {
 
@@ -64,8 +66,19 @@ export class AppComponent {
   // }
 
   downloadPdf() {
-    this.fileService.getFile('my-new-PDF.pdf', 'https://young-sands-07814.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
+    this.filesService.getFile('my-new-PDF.pdf', 'https://young-sands-07814.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
     .subscribe()
+  }
+
+  onUpload(event: Event) {
+    const element = event.target as HTMLInputElement;
+    const file = element.files?.item(0);
+    if (file) {
+      this.filesService.uploadFile(file)
+      .subscribe(rta => {
+        this.imageRta = rta.location;
+      });
+    }
   }
 
 
