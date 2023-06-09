@@ -359,6 +359,40 @@ ng g s services/token
 
 
 
+## Manage Headers 
+
+- Move from app.component the previous logic to the nav component.
+- In nav component the login button we get the token. 
+- Then the Get Profile button will use the token to receive the profile. (that's will show the user email)
+- Normally this logic is all together in one step. Something like loginAndGetProfile(). BUT I left separate in ordert to have a clear fonctionallity further apps.
+- In the app component the "create user button" will create an user in DB. To config this go to createUser().
+
+
+
+
+## Interceptor 
+
+- Create interceptor .
+```sh
+ng g interceptor interceptors/time --flat
+```
+- the "--flat" is to create directly the file without a folder ==> (time.interceptor.ts)
+- in time.interceptor.ts we will get the time that use the request
+- in app.module.ts we inject the time.interceptor ===> <br>
+import HTTP_INTERCEPTORS  <br>
+import TimeInterceptor <br>
+providers: [<br>
+    { provide: HTTP_INTERCEPTORS, useClass: TimeInterceptor, multi: true }<br>
+  ],<br>
+- With that we get the time for each request.
+
+
+
+
+
+
+
+
 <br /><br />
 
 
