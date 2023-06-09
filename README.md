@@ -388,6 +388,26 @@ providers: [<br>
 
 
 
+## Token with Interceptor 
+
+- In token.service we use the login to manage the token
+- In auth.service in the login() with will use the tokenService
+- IMPORTANT!!!... Now profile() will not use the token because the idea is using the interceptor add the token in the case we have the token already. 
+- We create the new "interceptor"
+```sh
+ng g interceptor interceptors/token --flat
+```
+- In the new token.interceptor we import the token.service and wi inject in the constructor ==> private tokenService.
+- IMPORTANT! We need to "intercept" all request and add the token. 
+- ADD a private method to add the token in the interceptor method. This method check if there is a token. If there is not a token just return the same request. If there is a token will change the header with the token.
+- The last step is to inject in the app.module.ts
+- IMPORTANT ! 
+- Now I also create a new loginAndGetProfile method ==> so now only one button login and then automatecliwy with token get also the profile so in the nav.html only one button LOGIN MARTIN<br>
+(Remember create first the user martin with button in app.html) <br>
+Nox in nav there is no var "token" so in html to show or not the login button the var is profile. 
+
+
+
 
 
 
