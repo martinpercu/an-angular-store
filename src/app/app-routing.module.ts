@@ -12,6 +12,11 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
     path: 'home',
     component: HomeComponent
   },
@@ -42,7 +47,7 @@ const routes: Routes = [
   {
     path: 'recovery',
     component: RecoveryComponent
-  },
+  }
 ];
 
 @NgModule({
