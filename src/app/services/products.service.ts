@@ -29,6 +29,9 @@ export class ProductsService {
   // ng serve
   private apiUrl = 'https://young-sands-07814.herokuapp.com/api/products';
 
+  private apiUrlForCategories = 'https://young-sands-07814.herokuapp.com/api/categories';
+
+
 
   // the next URL is WRONG ==>  just to try "retry and pipes"
   // private apiUrl = 'https://young-sands-07814.herokusdfapp.com/api/products';
@@ -40,6 +43,15 @@ export class ProductsService {
   // getAllProducts() {
   //   return this.http.get<Product[]>(this.apiUrl);
   // }
+
+  getByCategory(categoryId: string, limit?: number, offset?: number) {
+    let params = new HttpParams();
+    if (limit && offset) {
+      params = params.set('limit', limit);
+      params = params.set('offset', offset);
+    }
+    return this.http.get<Product[]>(`${this.apiUrlForCategories}/${categoryId}/products`, { params })
+  }
 
   getAllProducts(limit?: number, offset?: number) {
     let params = new HttpParams();
