@@ -445,11 +445,33 @@ npm install @types/file-saver --save-dev
 - The interface File in the files.service is the how the API response.
 
 
-
+## END of  ---> APIs REST 
 
 
 <br /><br />
 
+<br /><br />
+
+
+# Router and Modular dev 
+
+The next branches will be focus in Router and Modular develop. 
+
+## Create Routes
+
+- Create new all pages 
+```sh
+ng g c pages/home
+ng g c pages/register
+ng g c pages/login
+ng g c pages/profile
+ng g c pages/notFound
+ng g c pages/category
+ng g c pages/myCart
+ng g c pages/recovery
+```
+- In the app.component.html add the <router-outlet></router-outlet>
+- In app-routing.module.ts make the connections.
 
 
 

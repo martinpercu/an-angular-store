@@ -1,26 +1,14 @@
 <app-nav></app-nav>
+
 <button (click)="createUser()">Create user Martin</button>
-<p>
-  <a href="./assets/files/text-file.txt" download>Download Local File</a>
-</p>
-<p>
-  <button (click)="downloadPdf()">Download a pdf</button>
-</p>
-<p>
-  <input type="file" (change)="onUpload($event)">
+<p> <a href="./assets/files/text-file.txt" download>Download Local File</a></p>
+<p><button (click)="downloadPdf()">Download a pdf</button></p>
+<p><input type="file" (change)="onUpload($event)">
   <img *ngIf="imageRta" [src]="imageRta" style="width: 200px;">
 </p>
-<!-- <button (click)="login()">Login Martin</button>
-<button (click)="getProfile()">Get Martin Profile</button> -->
 
-<app-products></app-products>
+<router-outlet></router-outlet>
 
 
-<!--
-<p><input type="text" [(ngModel)]="imgParent"></p>
-<button (click)="toggleImage()">Turn of image</button>
-<p>{{ showImg }}</p>
+<!-- <app-products></app-products> -->
 
-<app-img img="this value comes from the father ==> MYSELF ==> app.component.html"></app-img>
-
-<app-img *ngIf="showImg" (loaded)="onLoaded($event)" [img]="imgParent"></app-img> -->
