@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 // import { AuthService } from './services/auth.service';
 import { UsersService } from './services/users.service';
+import { FilesService } from './services/files.service';
 
 
 
@@ -20,6 +21,7 @@ export class AppComponent {
   constructor(
     // private authService: AuthService,
     private usersService: UsersService,
+    private fileService: FilesService
 
     ) {
 
@@ -60,4 +62,11 @@ export class AppComponent {
   //     console.log(profile);
   //   });
   // }
+
+  downloadPdf() {
+    this.fileService.getFile('my-new-PDF.pdf', 'https://young-sands-07814.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
+    .subscribe()
+  }
+
+
 }
