@@ -6,6 +6,10 @@
 <p>
   <button (click)="downloadPdf()">Download a pdf</button>
 </p>
+<p>
+  <input type="file" (change)="onUpload($event)">
+  <img *ngIf="imageRta" [src]="imageRta" style="width: 200px;">
+</p>
 <!-- <button (click)="login()">Login Martin</button>
 <button (click)="getProfile()">Get Martin Profile</button> -->
 
