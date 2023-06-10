@@ -474,6 +474,26 @@ ng g c pages/recovery
 - In app-routing.module.ts make the connections.
 
 
+## Create Home
+
+- In page/home ====> <app-product> This will render the app products already we have.
+- In app-routing ==> a path to root with redirect to home.
+- Some refactor from products to home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

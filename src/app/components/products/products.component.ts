@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { switchMap } from 'rxjs/operators'
 import { zip } from 'rxjs'
 
@@ -13,16 +13,19 @@ import { ProductsService } from '../../services/products.service'
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit{
+export class ProductsComponent {
 
   // this vars under just for try pipes
   today = new Date();
   otherDate = new Date(2022, 11, 18);
   // this vars above just for try pipes
 
+  @Input() products: Product[] = [];
+  @Output() loadMore = new EventEmitter();
+
+
   myShoppingCart: Product[] = [];
   total = 0;
-  products: Product[] = [];
   showProductDetail = false;
   productChosen: Product = {
     id: '',
@@ -37,8 +40,8 @@ export class ProductsComponent implements OnInit{
     images: [],
   };
 
-  limit = 10;
-  offset = 0;
+  // limit = 10;
+  // offset = 0;
 
   statusDetail: 'loading' | 'succes' | 'error' | 'init' = 'init'
 
@@ -71,12 +74,12 @@ export class ProductsComponent implements OnInit{
   //   })
   // }
 
-  ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe(data => {
-      this.products = data;
-      console.log(data)
-    })
-  }
+  // ngOnInit(): void {
+  //   this.productsService.getAllProducts().subscribe(data => {
+  //     this.products = data;
+  //     console.log(data)
+  //   })
+  // }
 
   onAddToShoppingCart(product: Product) {
     console.log(product)
@@ -186,15 +189,19 @@ export class ProductsComponent implements OnInit{
   // Above works fine with getProductsByPage()
   // Under works directly with same function getAllProducts() ... this function has limit and offset OPTIONALS
 
+  // loadMoreProducts() {
+  //   console.log('Start offset loadMoreProducts ==> ', this.offset);
+  //   this.productsService.getAllProducts(this.limit, this.offset)
+  //   .subscribe(data => {
+  //     this.products = this.products.concat(data);
+  //     console.log(data);
+  //     this.offset += 10;
+  //     console.log('END offset loadMoreProducts ==> ', this.offset);
+  //   })
+  // }
+
   loadMoreProducts() {
-    console.log('Start offset loadMoreProducts ==> ', this.offset);
-    this.productsService.getAllProducts(this.limit, this.offset)
-    .subscribe(data => {
-      this.products = this.products.concat(data);
-      console.log(data);
-      this.offset += 10;
-      console.log('END offset loadMoreProducts ==> ', this.offset);
-    })
+    this.loadMore.emit();
   }
 
 }
