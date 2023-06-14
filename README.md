@@ -504,8 +504,16 @@ ng g c pages/recovery
 
 
 
+## RouterLink and RouterActive
 
+- In nav get categories [] the use for render a list of them an link differents pages.
+- Create service for category.
+```sh
+ng g s services/categories
 
+```
+- Create a model for category. Only id + name
+- in ngOnit we ask for the categories
 
 
 
