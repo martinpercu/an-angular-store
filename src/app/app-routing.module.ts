@@ -37,7 +37,7 @@ const routes: Routes = [
     component: NotFoundComponent
   },
   {
-    path: 'category',
+    path: 'category/:id',
     component: CategoryComponent
   },
   {

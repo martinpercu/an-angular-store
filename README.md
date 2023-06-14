@@ -482,6 +482,19 @@ ng g c pages/recovery
 
 
 
+## Category page
+
+- Category needs an id ==> in app-routing-module ==> path: 'category/:id',
+- In category.component ngOnint() we gets the params (the id ==> "this.categoryId").
+- In products service getByCategory(). Similar to getAllProducts BUT with a new apiUrl.
+- New apiUrl ===> "this.apiUrlForCategories".
+- In category component ==> import { ProductsService } from './../../services/products.service';
+- Copy from products limits and offset ==> both situation are quite similar.
+- In category html ===> <app-products [products]="products"></app-products>
+- In category also add the loadMoreProducts(). Now using getByCategory().
+
+
+
 
 
 
