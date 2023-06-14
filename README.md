@@ -496,6 +496,15 @@ ng g c pages/recovery
 
 
 
+## Callback Hell
+
+- In category ts modification in the ngOnit to avoid double subscribe using switchMap. (The commented ngOnit is the old one).
+- Also in @Component change the templateUrl for just template and write the html line of category.
+- If the html component is super quite long much better the standard way.
+
+
+
+
 
 
 
