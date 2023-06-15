@@ -65,13 +65,13 @@
       list-style: none;
       a {
         margin: 0 .2em;
-        color: inherit;
+        color: #555555;
         text-decoration: none;
         padding: 0.25em 0.8em;
         &.activated {
-          border: 2px solid pink;
-          color: pink;
-          border-radius: 4px;
+          border: 2px solid palevioletred;
+          color: palevioletred;
+          border-radius: 12px;
         }
       }
     }
