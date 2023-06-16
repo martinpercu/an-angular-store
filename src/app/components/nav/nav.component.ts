@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 import { StoreService } from '../../services/store.service';
 import { AuthService } from '../../services/auth.service';
+import { CategoriesService } from '../../services/categories.service';
 import { User } from '../../models/user.model';
+import { Category } from '../../models/category.model';
 
 
 
@@ -18,16 +20,19 @@ export class NavComponent {
   counter = 0;
   // token = '';
   profile: User | null = null;
+  categories: Category[] = [];
 
   constructor(
     private storeService: StoreService,
     private authService: AuthService,
+    private categoriesService: CategoriesService
   ) {}
 
   ngOnInit(): void {
     this.storeService.myCart$.subscribe(products => {
       this.counter = products.length;
-    })
+    });
+    this.getAllCategories();
   }
 
   toggleMenu() {
@@ -55,5 +60,13 @@ export class NavComponent {
   //     this.profile = user;
   //   });
   // }
+
+  getAllCategories() {
+    this.categoriesService.getAll()
+    .subscribe(data => {
+      this.categories = data;
+    });
+
+  }
 
 }

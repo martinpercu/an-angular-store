@@ -17,9 +17,9 @@
 <div class="side-menu" [class.active]="activeMenu">
   <button (click)="toggleMenu()">Close</button>
   <ul>
-    <li><a href="">All</a></li>
-    <li><a href="">Pictures</a></li>
-    <li><a href="">Statues</a></li>
+    <li><a routerLink="home">All</a></li>
+    <li *ngFor="let item of categories">
+      <a [routerLink]="['/category', item.id]">{{ item.name }}</a></li>
   </ul>
 </div>
 </div>
@@ -31,9 +31,9 @@
         <img src="./assets/images/nav/logo-largo.png" alt="menu">
       </a>
       <ul>
-        <li><a href="">All</a></li>
-        <li><a href="">Pictures</a></li>
-        <li><a href="">Statues</a></li>
+        <li><a routerLinkActive="activated" routerLink="home">All</a></li>
+        <li *ngFor="let item of categories">
+          <a routerLinkActive="activated" [routerLink]="['/category', item.id]">{{ item.name }}</a></li>
       </ul>
     </nav>
     <div class="info">
