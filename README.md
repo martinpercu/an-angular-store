@@ -517,6 +517,13 @@ ng g s services/categories
 
 
 
+## Not Found 404 
+
+- In app-routing ===> path: '**'.  ===> component: NotFoundComponent
+- In NotFoundComponent something to show.
+
+
+
 
 
 
