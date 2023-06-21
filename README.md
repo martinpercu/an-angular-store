@@ -524,6 +524,20 @@ ng g s services/categories
 
 
 
+## Detail Product Page
+
+
+- Create a page for this.service for category.
+```sh
+ng g c pages/product-detail
+
+```
+- Add route in app-routing.module as any other page.
+- Simple product detail features.
+- The back button is using @angular/common {Location}
+
+
+
 
 
 
