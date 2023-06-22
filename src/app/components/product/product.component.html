@@ -1,6 +1,9 @@
 <!-- <img width="190px" [src]="product.image" alt=""> -->
 <a [routerLink]="['/product', product.id]">
-  <app-img *ngIf="product.images.length > 0" [img]="product.images[0]"></app-img>
+  <app-img
+    *ngIf="product.images.length > 0"
+    [img]="product.images[0]">
+  </app-img>
 </a>
 <h3>{{ product.price | currency:"EUR"}}</h3>
 <!--
@@ -11,5 +14,6 @@
 <p *ngIf="product.taxes">{{ product.taxes | currency:"EUR"}}</p>
 <!-- The above 2 possibilities are OK.  I prefer the last one with *ngIf-->
 <p appHighlight>{{ product.description }}</p>
-<button (click)="onShowDetail()">See Detail</button>
+<!-- <button (click)="onShowDetail()">See Detail</button> -->
+<a routerLink="." [queryParams]="{product: product.id}">Voir detail</a>
 <button (click)="onAddToCart()">Add to cart</button>

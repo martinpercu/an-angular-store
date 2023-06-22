@@ -1,2 +1,6 @@
 <!-- <p>category works!</p> -->
-<app-products [products]="products" (loadMore)="loadMoreProducts()"></app-products>
+<app-products
+  [productId]="productId"
+  [products]="products"
+  (loadMore)="loadMoreProducts()">
+</app-products>

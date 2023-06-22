@@ -538,6 +538,25 @@ ng g c pages/product-detail
 
 
 
+## Query Params
+
+
+- Using the queryParams will allow to share a page with the specific product detail effect.
+- Important is queryParamMap in ngOnInit ! ! !
+- add some logic in show on/off the detail effect to manage the route.
+- The login must be twice in home and in categories
+- Just to remember this is the way to add query Prams to the route: <br>
+<a routerLink="." [queryParams]="{product: product.id}">Voir detail</a><br>
+/category/2 ===> /category/2?product=17  or <br>
+/home   ===>   /home?product=4
+
+
+
+
+
+
+
+
 
 
 
