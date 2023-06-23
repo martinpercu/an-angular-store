@@ -548,12 +548,25 @@ ng g c pages/product-detail
 - Just to remember this is the way to add query Prams to the route: <br>
 <a routerLink="." [queryParams]="{product: product.id}">Voir detail</a><br>
 /category/2 ===> /category/2?product=17  or <br>
-/home   ===>   /home?product=4
+/home   ===>   /home?product=4<br>
 
 
 
 
+# Modular development
 
+## Nested Views
+
+- Move all about the website to a new "folder" website. In website go exclusive the parts for the website ==> component directives pages and pipes. <br>
+Interceptors services and models could be use for other parts. So this "folders" keeps outside website folder. 
+- IMPORTANT ! This changes force us to check the imports and path everywhere. 
+- Create a component "layout" inside website/components.
+```sh
+ng g c website/layout
+
+```
+- The Layout will be use for manage the "app-nav". (take it from app.component.html).
+- Refactor app-routing.module to use the layout
 
 
 
