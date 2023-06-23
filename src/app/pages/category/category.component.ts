@@ -7,8 +7,8 @@ import { Product } from '../../models/product.model'
 
 @Component({
   selector: 'app-category',
-  // templateUrl: './category.component.html',
-  template: `<app-products [products]="products" (loadMore)="loadMoreProducts()"></app-products>`,
+  templateUrl: './category.component.html',
+  // template: `<app-products [products]="products" (loadMore)="loadMoreProducts()"></app-products>`,
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
@@ -17,6 +17,7 @@ export class CategoryComponent implements OnInit {
   limit = 10;
   offset = 0;
   products: Product[] = [];
+  productId: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,6 +38,10 @@ export class CategoryComponent implements OnInit {
     .subscribe((data) => {
       this.products = data
     });
+    this.route.queryParamMap.subscribe(params => {
+      this.productId = params.get('product');
+      console.log('the ID of product ==> ' + this.productId + ' <=== voici le productID');
+    })
   }
 
   // ngOnInit(): void {

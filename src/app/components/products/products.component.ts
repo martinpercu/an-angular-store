@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { switchMap } from 'rxjs/operators'
 import { zip } from 'rxjs'
+import { Location } from '@angular/common'
+
 
 import { Product, CreateProductDTO, UpdateProductDTO } from '../../models/product.model'
 
@@ -21,6 +23,15 @@ export class ProductsComponent {
   // this vars above just for try pipes
 
   @Input() products: Product[] = [];
+  // @Input() productId: string | null = null;
+  @Input()
+  set productId(id: string | null) {
+    if (id) {
+      this.getProductDetail(id);
+    }
+  }
+
+
   @Output() loadMore = new EventEmitter();
 
 
@@ -51,7 +62,8 @@ export class ProductsComponent {
 
   constructor(
     private storeService: StoreService,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private location: Location
   ) {
     this.myShoppingCart = this.storeService.getShoppingCart();
   }
@@ -93,10 +105,20 @@ export class ProductsComponent {
     this.showProductDetail = !this.showProductDetail;
   }
 
+  goBack() {
+    this.location.back();
+    console.log('GOBACK');
+    // this.showProductDetail = !this.showProductDetail;
+    this.toggleProductDetail()
+  }
+
   getProductDetail(id: string) {
     console.log(id)
     this.statusDetail = 'init';
-    this.toggleProductDetail();
+    // this.toggleProductDetail();
+    if (!this.showProductDetail) {
+      this.showProductDetail = true
+    }
     this.productsService.getProducts(id)
     .subscribe(data => {
       console.log('product ==> ', data);
