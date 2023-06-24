@@ -570,8 +570,24 @@ ng g c website/layout
 
 
 
+## CMS Module creation
 
+- Create the module + 3 components layout, task and grid.
+- Creation cms module (important!! add --routing) ===>
+```sh
+ng g m cms --routing
+```
+- Then creation of pages + layout
 
+```sh
+ng g c cms/pages/tasks
+ng g c cms/pages/grid
+ng g c cms/components/layout
+```
+- Adding html + scss to the layout component
+- In app-routing add the path to cms.<br>
+    loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)<br>
+IMPORTANT!! the line above is where the magic arrives. Only when you ask for this path the app will load this resourses. This able the LazyLoading and CodeSplitting.
 
 
 
