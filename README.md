@@ -602,6 +602,20 @@ ng g m website --routing
 
 
 
+## SHARED Module creation
+
+- Creation shared module
+```sh
+ng g m shared
+```
+- Create 3 folders inside the shared module (components + directives + pipes)
+- From website module take what will be shareable and move to shared module : (img, product, products) + all directives and all pipes
+- Import all in the new shared.module.ts
+- IMPORTANT in shared.module.ts add ===> exports: [ all part to be shared ]
+- In website module import the shared module
+- In shared import { RouterModule } from '@angular/router'; (this is to works with product.component)
+- In shared import { SwiperModule } from 'swiper/angular'; (this is to works with product.component)
+
 
 
 ## 
