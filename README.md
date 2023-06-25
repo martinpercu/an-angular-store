@@ -590,7 +590,15 @@ ng g c cms/components/layout
 IMPORTANT!! the line above is where the magic arrives. Only when you ask for this path the app will load this resourses. This able the LazyLoading and CodeSplitting.
 
 
+## Website Module creation
 
+- The folder "website" will be transform into a module.
+- Creation website module (important!! add --routing) ===>
+```sh
+ng g m website --routing
+```
+- Update the website.module with the code in app.module
+- Refactor from app to website.
 
 
 
