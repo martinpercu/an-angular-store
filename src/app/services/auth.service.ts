@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+
 
 import { environment } from './../../environments/environment';
 import { Auth } from './../models/auth.model';
@@ -21,7 +23,10 @@ export class AuthService {
 
   // this URL is OK but now we are using the proxy
   // ng serve
-  private apiUrl = 'https://young-sands-07814.herokuapp.com/api/auth';
+  private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/auth';
+  private user = new BehaviorSubject<User | null>(null);
+  user$ = this.user.asObservable();
+
 
 
 
@@ -58,11 +63,24 @@ export class AuthService {
     });
   }
 
+
+  getProfile() {
+    return this.http.get<User>(`${this.apiUrl}/profile`)
+    .pipe(
+      tap(user => this.user.next(user))
+    );
+  }
+
+
   loginAndGet(email: string, password: string) {
     return this.login(email, password)
     .pipe(
       switchMap(() => this.profile())
     )
+  }
+
+  logout() {
+    this.tokenService.removeToken();
   }
 
 

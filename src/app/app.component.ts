@@ -38,16 +38,17 @@ export class AppComponent {
     this.showImg = !this.showImg
   }
 
-  createUser() {
-    this.usersService.create({
-      name: 'Martin',
-      email: 'martin@supermail.com',
-      password: '19801980'
-    })
-    .subscribe(rta => {
-      console.log(rta);
-    });
-  }
+  // createUser() {
+  //   this.usersService.create({
+  //     name: 'Martin',
+  //     email: 'martincustomer@supermail.com',
+  //     password: '19801980',
+  //     role: 'customer'
+  //   })
+  //   .subscribe(rta => {
+  //     console.log(rta);
+  //   });
+  // }
 
   // login() {
   //   this.authService.login('martin@supermail.com', '19801980')
@@ -66,7 +67,7 @@ export class AppComponent {
   // }
 
   downloadPdf() {
-    this.filesService.getFile('my-new-PDF.pdf', 'https://young-sands-07814.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
+    this.filesService.getFile('my-new-PDF.pdf', 'https://damp-spire-59848.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
     .subscribe()
   }
 

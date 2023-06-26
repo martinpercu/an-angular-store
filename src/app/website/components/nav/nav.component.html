@@ -38,8 +38,11 @@
     </nav>
     <div class="info">
       <div class="account">
+        <button *ngIf="profile === null" (click)="createUser()">Create user Martin</button>
         <button *ngIf="profile === null; else elseBlock"  (click)="login()">Login Martin</button>
-        <ng-template #elseBlock>{{ profile?.email }}</ng-template>
+        <ng-template #elseBlock>
+          <a routerLink="/profile">{{ profile?.name }}</a>
+        </ng-template>
         <!-- <button (click)="getProfile()">Get Martin Profile</button> -->
       </div>
       <div class="cart">

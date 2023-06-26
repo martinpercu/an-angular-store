@@ -27,9 +27,9 @@ export class ProductsService {
 
   // this URL is OK but now we are using the proxy
   // ng serve
-  private apiUrl = 'https://young-sands-07814.herokuapp.com/api/products';
+  private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/products';
 
-  private apiUrlForCategories = 'https://young-sands-07814.herokuapp.com/api/categories';
+  private apiUrlForCategories = 'https://damp-spire-59848.herokuapp.com/api/categories';
 
 
 
