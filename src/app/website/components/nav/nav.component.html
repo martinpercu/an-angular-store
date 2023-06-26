@@ -42,6 +42,7 @@
         <button *ngIf="profile === null; else elseBlock"  (click)="login()">Login Martin</button>
         <ng-template #elseBlock>
           <a routerLink="/profile">{{ profile?.name }}</a>
+          <button (click)="logOutUser()">Logout</button>
         </ng-template>
         <!-- <button (click)="getProfile()">Get Martin Profile</button> -->
       </div>

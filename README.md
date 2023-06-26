@@ -696,7 +696,14 @@ Depend on NPM version you are using.
 npm g g guards/auth
 ```
 - Select CanActivate
+- Refactor to use guard in the /profile route
 
+
+
+## Redirect and Logout creation
+
+- Control login, logout + redirect if not login.
+- Add button and logout logic in Nav.
 
 
 

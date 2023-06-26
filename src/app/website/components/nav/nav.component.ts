@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 import { StoreService } from '../../../services/store.service';
 import { AuthService } from '../../../services/auth.service';
@@ -30,7 +31,8 @@ export class NavComponent {
     private storeService: StoreService,
     private authService: AuthService,
     private categoriesService: CategoriesService,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,7 +45,6 @@ export class NavComponent {
   toggleMenu() {
     this.activeMenu = !this.activeMenu
   }
-
 
   createUser() {
     this.usersService.create({
@@ -85,6 +86,12 @@ export class NavComponent {
       this.categories = data;
     });
 
+  }
+
+  logOutUser() {
+    this.authService.logout();
+    this.profile = null;
+    this.router.navigate(['/home'])
   }
 
 }
