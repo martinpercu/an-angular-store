@@ -14,7 +14,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { CategoryComponent } from './pages/category/category.component';
+// import { CategoryComponent } from './pages/category/category.component';
 import { MyCartComponent } from './pages/my-cart/my-cart.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
@@ -28,7 +28,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    CategoryComponent,
+    // CategoryComponent,
     MyCartComponent,
     RecoveryComponent,
     ProductDetailComponent,

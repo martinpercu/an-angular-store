@@ -618,6 +618,30 @@ ng g m shared
 
 
 
+## Preload Module 
+
+- Category is inside Website .... So this category will be transform in a lazy loading component.
+- Creation category module inside website/pages with ROUTING!!
+```sh
+ng g m website/pages/category --routing
+```
+- Now 2 new file inside website/pages/catefory ==> category routing and category module
+- category.component must be only in the category module (before was in website.module).
+- Refactor to use category module BUT the most important is in the website-routing use: <br>
+loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryModule)<br>
+- app products comes from the shared module so fixe thats in the category module
+- Now will load category only when it's needed. ==> when click in any of the categories.
+- NOW....
+- To have ready the category module on click will add the preload in background.
+- In app-routing add ===> import PreloadAllModules and in the imports ==> preloadingStrategy: PreloadAllModules
+- Now will load all modules in background. 
+- IMPORTANT!!! This is usefull when the app is quite small. If the app has a lot of modules could be better to use a personal loading strategy.
+
+
+
+
+
+
 ## 
 
 # All under is automatic angular readme generated.
