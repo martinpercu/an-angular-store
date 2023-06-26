@@ -6,15 +6,10 @@ import { SwiperModule } from 'swiper/angular';
 
 import { WebsiteRoutingModule } from './website-routing.module';
 
+import { SharedModule } from './../shared/shared.module'
 
-import { ImgComponent } from './components/img/img.component';
-import { ProductComponent } from './components/product/product.component';
-import { ProductsComponent } from './components/products/products.component';
+
 import { NavComponent } from './components/nav/nav.component';
-import { ReversePipe } from './pipes/reverse.pipe';
-import { TimeAgoPipe } from './pipes/time-ago.pipe';
-import { VocalsToNumbersPipe } from './pipes/vocals-to-numbers.pipe';
-import { HighlightDirective } from './directives/highlight.directive';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -28,14 +23,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
-    ImgComponent,
-    ProductComponent,
-    ProductsComponent,
     NavComponent,
-    ReversePipe,
-    TimeAgoPipe,
-    VocalsToNumbersPipe,
-    HighlightDirective,
     HomeComponent,
     RegisterComponent,
     LoginComponent,
@@ -49,7 +37,8 @@ import { LayoutComponent } from './components/layout/layout.component';
   imports: [
     CommonModule,
     WebsiteRoutingModule,
-    SwiperModule
+    SwiperModule,
+    SharedModule
   ]
 })
 export class WebsiteModule { }
