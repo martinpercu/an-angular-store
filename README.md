@@ -639,6 +639,22 @@ loadChildren: () => import('./pages/category/category.module').then(m => m.Categ
 
 
 
+## Custom Strategy Preload Module 
+
+- IF we have a big app with several modules to load better to implement a custom strategy preload module.
+- This is a little app but we could separate the CMS from the website + category modules.
+- Creation a service for preload modules!!
+```sh
+ng g s services/custom-preload
+```
+- In custom-preload.service implement the logic to load the route if this one has a 'preload' flag. 
+- In each route we want to use the preload we add the flag ===> <br>
+data: { preload: true }<br>
+This is in app-routing and in website.<br>
+- No to add the service in app-routing and change the preloadingStrategy for this new service. ===> PreloadAllModules (old) for the CustomPreloadService (new).
+- Now the app load the home + in background category BUT the CMS module will be charge only if we go to /cms. We choose the modules to be load in background.
+
+
 
 
 
