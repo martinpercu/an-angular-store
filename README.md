@@ -657,6 +657,33 @@ This is in app-routing and in website.<br>
 
 
 
+## Quicklink Strategy 
+
+- The other way to use preload is using the ngx-quicklink library. This allow to load the modulen whenever in the screen appear a Routerlink to a module. In this moment the module will be load.
+- Add the library to project:
+```sh
+npm i ngx-quicklink --save
+```
+OR
+```sh
+npm i ngx-quicklink@0.2.7 --legacy-peer-deps
+```
+Depend on NPM version you are using.
+- Impport import { QuicklinkStrategy } from 'ngx-quicklink' in app-routing.
+- This library must to by added in each module required. So...
+- import { QuicklinkModule } from 'ngx-quicklink'; in app.module and in website.module.
+- Now will detect in the screen any links will need a module and load these modules automatically. 
+
+
+
+
+
+
+
+
+
+
+
 
 ## 
 
