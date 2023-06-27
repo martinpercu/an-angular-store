@@ -40,6 +40,10 @@ export class NavComponent {
       this.counter = products.length;
     });
     this.getAllCategories();
+    this.authService.user$
+    .subscribe(data => {
+      this.profile = data;
+    })
   }
 
   toggleMenu() {
@@ -49,7 +53,7 @@ export class NavComponent {
   createUser() {
     this.usersService.create({
       name: 'Martin',
-      email: 'marto@mail.com',
+      email: 'martincho@mail.com',
       password: '19801980',
       role: 'customer'
     })
@@ -59,9 +63,9 @@ export class NavComponent {
   }
 
   login() {
-    this.authService.loginAndGet('marto@mail.com', '19801980')
-    .subscribe(user => {
-      this.profile = user;
+    this.authService.loginAndGet('martincho@mail.com', '19801980')
+    .subscribe(() => {
+      this.router.navigate(['/profile'])
       // this.token = '-invented-to-work-in-html-';
     })
     // .subscribe(rta => {

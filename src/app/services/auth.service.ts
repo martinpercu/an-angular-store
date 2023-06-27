@@ -27,9 +27,8 @@ export class AuthService {
   // ng serve
   private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/auth';
   private user = new BehaviorSubject<User | null>(null);
+
   user$ = this.user.asObservable();
-
-
 
 
   constructor(
@@ -37,12 +36,6 @@ export class AuthService {
     private tokenService: TokenService
   ) { }
 
-  login(email: string, password: string) {
-    return this.http.post<Auth>(`${this.apiUrl}/login`, {email, password})
-    .pipe(
-      tap(response => this.tokenService.saveToken(response.access_token))
-    );
-  }
 
   // profile(token: string) {
   //   // if we want more flexibility we can use a "const headers" as follow
@@ -56,6 +49,14 @@ export class AuthService {
   //   });
   // }
 
+
+  login(email: string, password: string) {
+    return this.http.post<Auth>(`${this.apiUrl}/login`, {email, password})
+    .pipe(
+      tap(response => this.tokenService.saveToken(response.access_token))
+    );
+  }
+
   profile() {
     return this.http.get<User>(`${this.apiUrl}/profile`, {
       // headers: {
@@ -65,7 +66,6 @@ export class AuthService {
     });
   }
 
-
   getProfile() {
     return this.http.get<User>(`${this.apiUrl}/profile`)
     .pipe(
@@ -73,11 +73,10 @@ export class AuthService {
     );
   }
 
-
   loginAndGet(email: string, password: string) {
     return this.login(email, password)
     .pipe(
-      switchMap(() => this.profile())
+      switchMap(() => this.getProfile())
     )
   }
 
