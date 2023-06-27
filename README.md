@@ -721,6 +721,18 @@ npm g g guards/auth
 
 
 
+## Guards for Admin ==> user role === 'admin' ===> OK to go CMS
+
+- In terminal create the guardian
+```sh
+npm g g guards/admin
+```
+- Select CanActivate
+- In app routing add the admin guard in the CMS route
+- In html a button login as admin ===> admin@mail.com + admin123
+- In html profile add a button to go to CMS only if the user has role == 'admin'
+
+
 
 
 

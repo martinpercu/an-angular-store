@@ -38,6 +38,7 @@
     </nav>
     <div class="info">
       <div class="account">
+        <button *ngIf="profile === null" (click)="loginAdmin()">Login ADMIN</button>
         <button *ngIf="profile === null" (click)="createUser()">Create user Martin</button>
         <button *ngIf="profile === null; else elseBlock"  (click)="login()">Login Martin</button>
         <ng-template #elseBlock>
