@@ -728,9 +728,30 @@ npm g g guards/auth
 npm g g guards/admin
 ```
 - Select CanActivate
-- In app routing add the admin guard in the CMS route
+- In app routing add the admin guard in the CMS route ===> <br>
+canActivate: [ AdminGuard ],<br>
 - In html a button login as admin ===> admin@mail.com + admin123
 - In html profile add a button to go to CMS only if the user has role == 'admin'
+
+
+
+
+## Guard Deactivate
+
+- In terminal create the guardian
+```sh
+npm g g guards/exit
+```
+- Select CanDeactivate
+- In exit.guard create <br>
+export interface OnExit {
+  onExit: () => Observable<boolean> | Promise<boolean> | boolean;
+}
+- in register.component import ===> { OnExit } from './../../../guards/exit.guard';
+- Put the login in the onExit().
+- In website-routing ===> add this guard ===><br>
+canDeactivate: [ ExitGuard ],<br>
+- Now we can control de exit with this guard
 
 
 
