@@ -18,7 +18,7 @@ export class UsersService {
 
   // this URL is OK but now we are using the proxy
   // ng serve
-  private apiUrl = 'https://young-sands-07814.herokuapp.com/api/users';
+  private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/users';
 
 
 

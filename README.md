@@ -210,7 +210,7 @@ import { HttpClient} from '@angular/common/http'<br />
 +<br />
 constructor(private http: HttpClient) { }<br /><br />
 
-- New api to consume (https://young-sands-07814.herokuapp.com/api/products)
+- New api to consume (https://damp-spire-59848.herokuapp.com/api/products)
 - Change in services and imports etc
 - Updates in html
 
@@ -457,6 +457,8 @@ npm install @types/file-saver --save-dev
 
 The next branches will be focus in Router and Modular develop. 
 
+# Router / Routes 
+
 ## Create Routes
 
 - Create new all pages 
@@ -617,6 +619,8 @@ ng g m shared
 - In shared import { SwiperModule } from 'swiper/angular'; (this is to works with product.component)
 
 
+# Preload Modules 
+
 
 ## Preload Module 
 
@@ -677,8 +681,29 @@ Depend on NPM version you are using.
 
 
 
+# GUARDS
+
+- To check the guards change the api.
+- New api to consume from (https://young-sands-07814.herokuapp.com) to (https://damp-spire-59848.herokuapp.com)
+- Updates all Change in services and imports etc
 
 
+
+## Guards creation
+
+- In terminal create the guardian
+```sh
+npm g g guards/auth
+```
+- Select CanActivate
+- Refactor to use guard in the /profile route
+
+
+
+## Redirect and Logout creation
+
+- Control login, logout + redirect if not login.
+- Add button and logout logic in Nav.
 
 
 

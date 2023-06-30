@@ -4,6 +4,7 @@ export interface User {
   name: string;
   email: string;
   password: string; // just for practicity == This is NOT secure!!!! ==> the backend should not return the password
+  role: 'admin' | 'customer';
 }
 
 

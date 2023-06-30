@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 import { StoreService } from '../../../services/store.service';
 import { AuthService } from '../../../services/auth.service';
 import { CategoriesService } from '../../../services/categories.service';
 import { User } from '../../../models/user.model';
 import { Category } from '../../../models/category.model';
+
+import { UsersService } from './../../../services/users.service';
+
 
 
 
@@ -21,11 +25,14 @@ export class NavComponent {
   // token = '';
   profile: User | null = null;
   categories: Category[] = [];
+  user: User | null = null;
 
   constructor(
     private storeService: StoreService,
     private authService: AuthService,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private usersService: UsersService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -39,8 +46,20 @@ export class NavComponent {
     this.activeMenu = !this.activeMenu
   }
 
+  createUser() {
+    this.usersService.create({
+      name: 'Martin',
+      email: 'marto@mail.com',
+      password: '19801980',
+      role: 'customer'
+    })
+    .subscribe(rta => {
+      console.log(rta);
+    });
+  }
+
   login() {
-    this.authService.loginAndGet('martin@supermail.com', '19801980')
+    this.authService.loginAndGet('marto@mail.com', '19801980')
     .subscribe(user => {
       this.profile = user;
       // this.token = '-invented-to-work-in-html-';
@@ -67,6 +86,12 @@ export class NavComponent {
       this.categories = data;
     });
 
+  }
+
+  logOutUser() {
+    this.authService.logout();
+    this.profile = null;
+    this.router.navigate(['/home'])
   }
 
 }
