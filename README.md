@@ -364,7 +364,7 @@ ng g s services/token
 - Move from app.component the previous logic to the nav component.
 - In nav component the login button we get the token. 
 - Then the Get Profile button will use the token to receive the profile. (that's will show the user email)
-- Normally this logic is all together in one step. Something like loginAndGetProfile(). BUT I left separate in ordert to have a clear fonctionallity further apps.
+- Normally this logic is all together in one step. Something like loginAndGetProfile(). BUT I left separate in order to have a clear fonctionallity further apps.
 - In the app component the "create user button" will create an user in DB. To config this go to createUser().
 
 
@@ -397,14 +397,14 @@ providers: [<br>
 ```sh
 ng g interceptor interceptors/token --flat
 ```
-- In the new token.interceptor we import the token.service and wi inject in the constructor ==> private tokenService.
+- In the new token.interceptor we import the token.service and then inject it in the constructor ==> private tokenService.
 - IMPORTANT! We need to "intercept" all request and add the token. 
 - ADD a private method to add the token in the interceptor method. This method check if there is a token. If there is not a token just return the same request. If there is a token will change the header with the token.
 - The last step is to inject in the app.module.ts
 - IMPORTANT ! 
 - Now I also create a new loginAndGetProfile method ==> so now only one button login and then automatecliwy with token get also the profile so in the nav.html only one button LOGIN MARTIN<br>
 (Remember create first the user martin with button in app.html) <br>
-Nox in nav there is no var "token" so in html to show or not the login button the var is profile. 
+Now in nav there is no var "token" so in html to show or not the login button the var is profile. 
 
 
 ## Context Interceptor 
@@ -707,10 +707,24 @@ npm g g guards/auth
 
 
 
+## Login Status
+
+- In auth.service create BehaviorSubject<User | null> .
+- user$ = this.user.asObservable().
+- in getProfile() ===> tap(user => this.user.next(user))
+- NOW we have the user status ... so we can use it everywhere.
+- In auth.guard replace the token.service for the auth.service (will be commented to see de difference)
+- In canActivate() ===> return this.authService.user$  ===> true or false if exists user$.
+- Now in profile.component replace the getProfile() for the user$. (we already have it!!).
+- In nav refactor using user$
+- In app.component create method to get profile just one time to use it in all the app.
 
 
 
-## 
+
+
+
+##  
 
 # All under is automatic angular readme generated.
 
