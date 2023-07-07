@@ -76,6 +76,12 @@ export class NavComponent {
     ;
   }
 
+  loginAdmin() {
+    this.authService.loginAndGet('admin@mail.com', 'admin123')
+    .subscribe(() => {
+      this.router.navigate(['/profile'])
+    })
+  }
   // getProfile() {
   //   this.authService.profile()
   //   .subscribe(user => {
