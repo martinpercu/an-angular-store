@@ -18,7 +18,8 @@ interface File {
 })
 export class FilesService {
 
-  private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/files';
+  // private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/files';
+  private apiUrl = 'https://api.escuelajs.co/api/v1/files';
 
   constructor(
     private http: HttpClient

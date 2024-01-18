@@ -754,6 +754,10 @@ canDeactivate: [ ExitGuard ],<br>
 - Now we can control de exit with this guard
 
 
+## UPDATE API
+
+- Update to new API
+
 
 
 
