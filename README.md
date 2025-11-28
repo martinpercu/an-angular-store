@@ -1,3 +1,46 @@
+# 🛍️ An Angular Store: Comprehensive E-commerce Application
+
+This repository contains a full-featured e-commerce application built with **Angular**, demonstrating fundamental concepts, advanced patterns, and best practices for building scalable, maintainable frontends.
+
+## 🌟 Core Angular Concepts
+
+* **Components & Lifecycle:** Detailed examples of component creation, `@Input()` and `@Output()` communication, and lifecycle hooks (`ngOnInit`, `ngOnChanges`, `ngOnDestroy`), including using `Set Input` for targeted change detection.
+* **Services & State:** Implements dedicated services for business logic, API calls (`HttpClientModule`), and **State Management** using Observables (`BehaviorSubject`) for reactivity across components.
+* **Pipes & Directives:** Custom implementations of Pipes (e.g., `timeAgo`) and Directives (e.g., `highlight`) to manipulate data display and control the DOM.
+
+## 🌐 API Integration (REST)
+
+The project covers all standard interactions with a REST API:
+
+* **HTTP Methods:** Implements GET, POST, PUT, PATCH, and DELETE requests, including handling URL parameters and pagination (`limit`/`offset`).
+* **Observables:** Explores the difference between Observables and Promises, techniques for request retries, and using **`switchMap`** and **`zip`** to avoid "callback hell."
+* **Data Transformation:** Shows how to transform API response data (e.g., calculating taxes) within the service layer before it reaches the components.
+* **Networking:** Addresses **CORS** issues using Angular's proxy configuration in development and manages API URLs using the `environments` files.
+* **File Handling:** Implements logic for **File Upload** (`FormData`) and **File Download** (`file-saver`).
+
+## 🛡️ Authentication and Interceptors
+
+* **Interceptors:** Uses the `HTTP_INTERCEPTORS` token to implement global logic:
+    * **Timing:** Measures request duration (`TimeInterceptor`).
+    * **Authorization:** Automatically attaches the access token to all relevant outgoing requests (`TokenInterceptor`).
+    * **Context:** Uses `HttpContext` to selectively bypass interceptor logic for specific requests.
+* **Guards:** Secures application routes using various guards:
+    * **`CanActivate` (Auth & Admin):** Protects routes based on login status and user role (`admin`).
+    * **`CanDeactivate` (Exit):** Prompts the user for confirmation before leaving a page (e.g., an unsaved form).
+
+## 📐 Routing and Modular Development
+
+The application architecture is optimized for performance and scalability:
+
+* **Router:** Sets up core routing (`router-outlet`), parameter handling (`:id`), and **Query Params** (for sharing deep links).
+* **Lazy Loading:** Uses **Modular Development** (`cms.module`, `website.module`) to implement:
+    * **Code Splitting:** Loading modules only when needed.
+    * **Preloading:** Implements `PreloadAllModules`, a **Custom Preload Strategy**, and the **Quicklink Strategy** to load modules in the background based on developer choice or user intent.
+* **Shared Module:** Centralizes reusable components, directives, and pipes to avoid duplication across feature modules.
+
+---------
+
+
 ## first-step
 
 ```sh
@@ -753,6 +796,10 @@ export interface OnExit {
 canDeactivate: [ ExitGuard ],<br>
 - Now we can control de exit with this guard
 
+
+## UPDATE API
+
+- Update to new API
 
 
 

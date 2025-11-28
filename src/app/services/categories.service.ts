@@ -29,9 +29,11 @@ export class CategoriesService {
 
   // this URL is OK but now we are using the proxy
   // ng serve
-  private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/products';
+  // private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/products';
+  private apiUrl = 'https://api.escuelajs.co/api/v1/products';
 
-  private apiUrlForCategories = 'https://damp-spire-59848.herokuapp.com/api/categories';
+  // private apiUrlForCategories = 'https://damp-spire-59848.herokuapp.com/api/categories';
+  private apiUrlForCategories = 'https://api.escuelajs.co/api/v1/categories';
 
 
 

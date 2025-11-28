@@ -25,7 +25,9 @@ export class AuthService {
 
   // this URL is OK but now we are using the proxy
   // ng serve
-  private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/auth';
+  // private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/auth';
+  private apiUrl = 'https://api.escuelajs.co/api/v1/auth';
+
   private user = new BehaviorSubject<User | null>(null);
 
   user$ = this.user.asObservable();

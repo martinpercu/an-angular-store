@@ -65,12 +65,12 @@
       list-style: none;
       a {
         margin: 0 .2em;
-        color: #555555;
+        color: #747474;
         text-decoration: none;
         padding: 0.25em 0.8em;
         &.activated {
-          border: 2px solid palevioletred;
-          color: palevioletred;
+          border: 2px solid #ff3df0;
+          color: #ff3df0;
           border-radius: 12px;
         }
       }
